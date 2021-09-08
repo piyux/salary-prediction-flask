@@ -3,7 +3,7 @@ import joblib
 
 app = Flask("SalaryPrediction")
 
-model = joblib.load('../MODEL/model.x')
+model = joblib.load('./model.x')
 
 @app.route("/")
 def root():
