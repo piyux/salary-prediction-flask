@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import joblib
 
-app = Flask("SalaryPrediction")
+app = Flask("__main__")
 
 model = joblib.load('./model.x')
 
@@ -25,4 +25,6 @@ def not_found_error(error):
 @app.errorhandler(500)
 def internal_error(error):
     return render_template('error.html'),500
-app.run(host="0.0.0.0")
+
+if __name__ == '__main__':
+  app.run(debug=True)
